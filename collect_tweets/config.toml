@@ -1,0 +1,5 @@
+APP_NAME = 'you_app_name'
+API_KEY = 'you_api_key'
+API_KEY_SECRET = 'you_api_key_secret'
+ACCESS_TOKEN = 'you_token'
+ACCESS_TOKEN_SECRET = 'you_token_secret'
