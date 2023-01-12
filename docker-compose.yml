@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 services:
 
   my_db:
@@ -21,6 +21,25 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - case_twitter_network
+
+  collect_tweets:
+    build:
+      context: ./collect_tweets
+      dockerfile: Dockerfile
+    image: collect_tweets:latest
+    container_name: collect_tweets
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_TAGS: case_twitter
+      SERVICE_NAME: collect_tweets
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - case_twitter_network
+    depends_on:
+      - my_db
+
 #Networks
 networks:
   case_twitter_network:
