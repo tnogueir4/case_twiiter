@@ -13,11 +13,11 @@ Default #tags:
 <br/><br/>
 
 ## Table of Contents
-[APIs](#apis)
-[Architecture](#architecture)
-[How_to](#howto)
-[Logs](#logs)
-[Dashboards](#dashboards)
+ - [APIs](#apis)
+ - [Architecture](#architecture)
+ - [How_to](#howto)
+ - [Logs](#logs)
+ - [Dashboards](#dashboards)
 
 ## <a name="apis">APIs</a>
 ## <a name="architecture">Architecture</a>
