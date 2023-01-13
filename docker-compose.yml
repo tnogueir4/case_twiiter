@@ -61,6 +61,3 @@ services:
 networks:
   case_twitter_network:
     driver: bridge
-# Volumes
-volumes:
-  dbdata:
