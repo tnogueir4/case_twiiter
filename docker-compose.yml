@@ -39,6 +39,24 @@ services:
     depends_on:
       - my_db
 
+  summarizer:
+    build:
+      context: ./summarizer
+      dockerfile: Dockerfile
+    image: summarizer:latest
+    container_name: summarizer
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_TAGS: case_twitter
+      SERVICE_NAME: summarizer
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - case_twitter_network
+    depends_on:
+      - my_db
+
 #Networks
 networks:
   case_twitter_network:
