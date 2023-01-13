@@ -11,7 +11,7 @@ with open('config.toml') as config:
     ACCESS_TOKEN = config['ACCESS_TOKEN']
     ACCESS_TOKEN_SECRET = config['ACCESS_TOKEN_SECRET']
 
-tweetsPerQry = 5
+tweetsPerQry = 100
 maxTweets = 1000000
 hashtags = ["#openbanking", "#remediation", "#devops", "#sre", "#microservices", "#observability", "#oauth", "#metrics", "#logmonitoring", "#opentracing"]
 
