@@ -1,5 +1,3 @@
-FROM mysql
+FROM mariadb
 
-COPY ./schema_social_media.sql /tmp
-
-CMD [ "mysqld", "--init-file=/tmp/schema_social_media.sql" ]
+ADD ./schema_social_media.sql /docker-entrypoint-initdb.d/ddl.sql

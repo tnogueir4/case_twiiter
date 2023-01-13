@@ -17,8 +17,7 @@ services:
       SERVICE_TAGS: case_twitter
       SERVICE_NAME: mysql
     volumes:
-      - dbdata:/var/lib/mysql
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ${PWD}/mariadb:/var/lib/mysql
     networks:
       - case_twitter_network
 

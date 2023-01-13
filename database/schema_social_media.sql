@@ -67,8 +67,8 @@ DROP TABLE IF EXISTS all_posts_by_datetime;
 CREATE TABLE all_posts_by_datetime
 (
     id INTEGER AUTO_INCREMENT,
+    num_posts INT(5),
     created_at DATETIME,
-    text TEXT(280),
     PRIMARY KEY (id)
 );
 
@@ -77,8 +77,8 @@ DROP TABLE IF EXISTS post_tag_per_location;
 CREATE TABLE post_tag_per_location
 (
     id INTEGER AUTO_INCREMENT,
-    text TEXT(280),
+    num_posts INT(5),
     text_hashtags VARCHAR(25),
     user_location VARCHAR(50),
     PRIMARY KEY (id)
-)
+);

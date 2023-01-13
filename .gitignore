@@ -1,1 +1,5 @@
 mysql
+mariadb
+mariadb/*
+mariadb-*.*.*.tar.gz
+mariadb-*.*.*/
