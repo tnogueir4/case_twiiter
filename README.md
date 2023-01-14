@@ -15,6 +15,9 @@ Tabela de conteúdos
 =================
 <!--ts-->
  - [APIs](#apis)
+    - [Métodos](#metodos)
+    - [Respostas](#resp)
+    - [Recursos](#recursos)
  - [Architecture](#architecture)
  - [How_to](#howto)
  - [Logs](#logs)
@@ -29,7 +32,7 @@ Recursos disponíveis via API:
  * Total de posts, agrupadas por hora do dia independente da #tag.
  * Total de posts para cada uma das #tags por localização do usuário que postou.
 
- ## Métodos
+ ## <a name="metodos">Métodos</a>
 Requisições para a API devem seguir os padrões:
 | Método | Descrição |
 |---|---|
@@ -37,7 +40,7 @@ Requisições para a API devem seguir os padrões:
 | `POST` | Utilizado para criar um novo registro. |
 | `DELETE` | Remove um ou mais registros. |
 
-## Respostas
+## <a name="resp">Respostas</a>
 
 | Código | Descrição |
 |---|---|
@@ -50,7 +53,7 @@ Requisições para a API devem seguir os padrões:
 | `422` | Dados informados estão fora do escopo definido para o campo.|
 | `429` | Número máximo de requisições atingido. (*aguarde alguns segundos e tente novamente*)|
 
-## Recursos
+## <a name="recursos">Recursos</a>
 
 ### Dados de usuários [/topfollowers] <br/>
 <b>Listar (list) [GET /topfollowers]</b>
