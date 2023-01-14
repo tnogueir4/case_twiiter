@@ -19,7 +19,6 @@ while loop_app < 1:
     
     myresult = mycursor.fetchall()
     
-    mycursor.execute("DELETE FROM top_user_followers") #Clean table top_user_followers for new top users
     for rs in myresult:
         sql = "INSERT INTO top_user_followers (user_name, user_followers_count) VALUES (%s,%s)"
         val = (rs[0], rs[1])
