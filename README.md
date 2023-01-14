@@ -55,8 +55,8 @@ Requisições para a API devem seguir os padrões:
 
 ## <a name="recursos">Recursos</a>
 
-### Dados de usuários [/topfollowers] <br/>
-<b>Listar (list) [GET /topfollowers]</b>
+## Dados de usuários [/topfollowers] <br/>
+<b>Listar (list) [GET /topfollowers]</b> <br/>
 Cria uma lista com os 5 usuários com mais seguidores.
 
 ```
@@ -115,7 +115,7 @@ Inclui um novo registro de usuário / seguidores.
 }
 ```
 <br/>
-<b>Remover (delete) [DELETE /topfollowers]</b>
+<b>Remover (delete) [DELETE /topfollowers]</b><br/>
 Deleta um registro de usuário / seguidores.
 
 ```
@@ -140,7 +140,9 @@ Deleta um registro de usuário / seguidores.
             }
 ```
 <br/>
-<b>Listar (list) [GET /countposts]</b>
+
+## Contagem de posts por data/hora [/countposts] <br/>
+<b>Listar (list) [GET /countposts]</b><br/>
 Cria uma lista com o total de posts por hora do dia.
 
 ```
@@ -171,8 +173,86 @@ Cria uma lista com o total de posts por hora do dia.
             }
 ```
 <br/>
+<b>Apagar (delete) [DELETE /countposts]</b><br/>
+Apaga a lista com o total de posts por hora do dia.
+
+```
+
++ Request (application/json)
+
+    + Body
 
 
++ Response 200 (application/json)
+
+    + Body
+            {
+                "mensagem": "All route data /countposts has been deleted."
+            }
+
+```
+<br/>
+
+## Total de posts para #tag por localização [/posttaglocation] <br/>
+<b>Listar (list) [GET /posttaglocation]</b> <br/>
+Cria uma lista com o total de posts para cada #tag por localização.
+
+```
++ Request (application/json)
+
+    + Body
+
+
++ Response 200 (application/json)
+    
+    + Body
+
+            {
+            "mensagem": "Total posts per #tags by user location",
+            "dados": [
+                {
+                    "count_posts": 10,
+                    "#tags": "#devops",
+                    "user_location": "USA"
+                },
+                {
+                    "count_posts": 41,
+                    "#tags": "#devops",
+                    "user_location": "Flutterverse"
+                },
+                {
+                    "count_posts": 10,
+                    "#tags": "#microservices",
+                    "user_location": "Grand Tombeau de Nazarick"
+                },
+                {
+                    "count_posts": 10,
+                    "#tags": "#openbanking",
+                    "user_location": "Melbourne"
+                },
+            ]
+            }
+```
+<br/>
+<b>Apagar (delete) [DELETE /posttaglocation]</b><br/>
+Apaga a lista com o total de posts para cada #tag por localização.
+
+```
+
++ Request (application/json)
+
+    + Body
+
+
++ Response 200 (application/json)
+
+    + Body
+            {
+                "mensagem": "All route data /posttaglocation has been deleted."
+            }
+
+```
+<br/>
 
 ## <a name="architecture">Architecture</a>
 ## <a name="howto">How to</a>
