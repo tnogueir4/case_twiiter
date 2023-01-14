@@ -88,16 +88,12 @@ Cria uma lista com os 5 usuários com mais seguidores.
                 "username": "Growth Hackers 🚀",
                 "followers": 175317
             }
-
 ```
-
----
-
-<br/><br/>
-
+<br/>
 <b>Novo (create) [POST /topfollowers]</b>
 Inclui um novo registro de usuário / seguidores.
 
+```
 + Request (application/json)
 
     + Body
@@ -106,7 +102,6 @@ Inclui um novo registro de usuário / seguidores.
                 "followers": 999999
             }
 
-<br/>
 
 + Response 200 (application/json)
 
@@ -118,12 +113,12 @@ Inclui um novo registro de usuário / seguidores.
                 "followers": 999999
             }
 }
-
-<br/><br/>
-
+```
+<br/>
 <b>Remover (delete) [DELETE /topfollowers]</b>
 Deleta um registro de usuário / seguidores.
 
+```
 + Request (application/json)
 
     + Body
@@ -132,7 +127,6 @@ Deleta um registro de usuário / seguidores.
                 "followers": 999999
             }
 
-<br/>
 
 + Response 200 (application/json)
 
@@ -144,17 +138,16 @@ Deleta um registro de usuário / seguidores.
                     "followers": 999999
                 }
             }
-
-<br/><br/>
-
+```
+<br/>
 <b>Listar (list) [GET /countposts]</b>
 Cria uma lista com o total de posts por hora do dia.
 
+```
 + Request (application/json)
 
     + Body
 
-<br/>
 
 + Response 200 (application/json)
 
@@ -176,8 +169,8 @@ Cria uma lista com o total de posts por hora do dia.
                     }
                 ]
             }
-
-<br/><br/>
+```
+<br/>
 
 
 
