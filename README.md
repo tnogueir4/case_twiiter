@@ -59,11 +59,11 @@ Requisições para a API devem seguir os padrões:
 <b>Listar (list) [GET /topfollowers]</b>
 Cria uma lista com os 5 usuários com mais seguidores.
 
+```
 + Request (application/json)
 
     + Body
 
-<br/>
 
 + Response 200 (application/json)
 
@@ -89,6 +89,10 @@ Cria uma lista com os 5 usuários com mais seguidores.
                 "followers": 175317
             }
 
+```
+
+---
+
 <br/><br/>
 
 <b>Novo (create) [POST /topfollowers]</b>
@@ -101,6 +105,8 @@ Inclui um novo registro de usuário / seguidores.
                 "username": "test_user04",
                 "followers": 999999
             }
+
+<br/>
 
 + Response 200 (application/json)
 
@@ -126,6 +132,8 @@ Deleta um registro de usuário / seguidores.
                 "followers": 999999
             }
 
+<br/>
+
 + Response 200 (application/json)
 
     + Body
@@ -136,6 +144,42 @@ Deleta um registro de usuário / seguidores.
                     "followers": 999999
                 }
             }
+
+<br/><br/>
+
+<b>Listar (list) [GET /countposts]</b>
+Cria uma lista com o total de posts por hora do dia.
+
++ Request (application/json)
+
+    + Body
+
+<br/>
+
++ Response 200 (application/json)
+
+    + Body
+            {
+                "mensagem": "Count posts by datetime",
+                "dados": [
+                    {
+                        "created_at": "Sat, 07 Jan 2023 14:28:38 GMT",
+                        "count_posts": 12
+                    },
+                    {
+                        "created_at": "Sat, 07 Jan 2023 15:00:12 GMT",
+                        "count_posts": 10
+                    },
+                    {
+                        "created_at": "Sat, 07 Jan 2023 15:13:13 GMT",
+                        "count_posts": 42
+                    }
+                ]
+            }
+
+<br/><br/>
+
+
 
 ## <a name="architecture">Architecture</a>
 ## <a name="howto">How to</a>
