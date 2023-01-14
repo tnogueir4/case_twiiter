@@ -57,6 +57,26 @@ services:
     depends_on:
       - my_db
 
+  api_case_twiiter:
+    build:
+      context: ./api_case_twiiter
+      dockerfile: Dockerfile
+    image: api_case_twiiter:latest
+    ports:
+      - "5000:5000"
+    container_name: api_case_twiiter
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_TAGS: case_twitter
+      SERVICE_NAME: api_case_twiiter
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - case_twitter_network
+    depends_on:
+      - my_db
+
 #Networks
 networks:
   case_twitter_network:
