@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "726e12f9-e522-48db-8c43-da5fc36477dd",
+		"name": "api_case_twiiter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "top_followers",
+			"item": [
+				{
+					"name": "top_5_users_by_followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/topfollowers",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"topfollowers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top_5_users_by_followers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test_user03\",\r\n    \"followers\": 989999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/topfollowers",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"topfollowers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top_5_users_by_followers",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test_user02\",\r\n    \"followers\": 979999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/topfollowers",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"topfollowers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "count_posts",
+			"item": [
+				{
+					"name": "get_count_posts_by_date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/countposts",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"countposts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset_count_posts_by_date",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/countposts",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"countposts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posttaglocation",
+			"item": [
+				{
+					"name": "get_post_tag_location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/posttaglocation",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"posttaglocation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset_post_tag_location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{api_case_twiiter}}/posttaglocation",
+							"protocol": "http",
+							"host": [
+								"{{api_case_twiiter}}"
+							],
+							"path": [
+								"posttaglocation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
