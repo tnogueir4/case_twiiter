@@ -18,8 +18,8 @@ Tabela de conteúdos
     - [Métodos](#metodos)
     - [Respostas](#resp)
     - [Recursos](#recursos)
- - [Architecture](#architecture)
- - [How_to](#howto)
+ - [Arquitetura](#arquitetura)
+ - [Como usar](#comousar)
  - [Logs](#logs)
  - [Dashboards](#dashboards)
 <!--te-->
@@ -254,7 +254,63 @@ Apaga a lista com o total de posts para cada #tag por localização.
 ```
 <br/>
 
-## <a name="architecture">Architecture</a>
-## <a name="howto">How to</a>
+## <a name="arquitetura">Arquitetura</a>
+## <a name="comousar">Como usar</a>
+<p>Para utilizar este projeto, será necessário que você tenha uma <a href="https://developer.twitter.com/en"> conta de desenvolvedor do Twitter</a> para poder autenticar na API.</p>
+
+<p>Os pré-requisitos abaixo devem ser verificados e/ou instalados:</p>
+
+| Pré-requisitos | Versão |
+|---|---|
+| `python` | >= 3|
+| `docker-ce` | >= 5:20.10.22 |
+| `docker-compose` | >= 1.25.0|
+
+<br/>
+<p>Com os pré-requisitos verificados, siga os passos abaixo:</p>
+
+1 - Baixe o repositório via git:
+
+```
+git clone git@github.com:tnogueir4/case_twiiter.git
+```
+
+<br/>
+2 - Edite o arquivo collect_tweets/config.toml e insira os dados conforme solicitado. O nome da app, keys e tokens você obtém através do <a href="https://developer.twitter.com/en"> portal de desenvolvedor Twitter:</a>
+
+```
+APP_NAME = 'you_app_name'
+API_KEY = 'you_api_key'
+API_KEY_SECRET = 'you_api_key_secret'
+ACCESS_TOKEN = 'you_token'
+ACCESS_TOKEN_SECRET = 'you_token_secret'
+```
+
+<br/>
+3 - Suba o ambiente completo através do docker-compose na raiz do projeto:
+
+```
+$ docker-compose up -d
+```
+Aguarde até que todos builds das imagens sejam concluídos e cada container seja criado.
+
+<br/>
+4 - Verifique se os containers foram inicializados corretamente:
+
+```
+$ docker-compose ps
+```
+
+<br/>
+5 - Caso algum container esteja com erro, verifique os logs para identificar o motivo:
+
+```
+$ docker-compose logs nome_do_container
+```
+
+<br/>
+6 - Subindo os containers e não havendo mais erros, seu ambiente já estará UP e a API já poderá ser consumida, bem como verificar os logs e monitoramento.
+
+
 ## <a name="logs">Logs</a>
 ## <a name="dashboards">Dashboards</a>
