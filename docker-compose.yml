@@ -72,6 +72,7 @@ services:
       SERVICE_NAME: api_case_twiiter
     volumes:
       - .:/usr/src/app
+      - flasklog:/usr/src/app/record.log
     networks:
       - case_twitter_network
     depends_on:
@@ -131,6 +132,29 @@ services:
     networks:
       - case_twitter_network
 
+  splunk:
+    hostname: splunk
+    image: outcoldman/splunk:6.2-light
+    volumes:
+      - splunketc:/opt/splunk/etc
+      - splunkvar:/opt/splunk/var
+      - flasklog:/opt/splunk/var/log
+    ports:
+      - 8000:8000
+      - 9997:9997
+    restart: always
+
+  forwarder:
+    image: outcoldman/splunk:6.2-forwarder
+    environment:
+      - SPLUNK_FORWARD_SERVER=splunk:9997
+    volumes:
+      - vlogs:/opt/splunk/etc/
+      - vforwarder:/opt/splunk/var
+    ports:
+      - 514:1514/udp
+    restart: always
+
 #Networks
 networks:
   case_twitter_network:
@@ -142,3 +166,8 @@ volumes:
   netdatacache:
   prometheus_data:
   grafana_data:
+  splunketc:
+  splunkvar:
+  vlogs:
+  vforwarder:
+  flasklog:

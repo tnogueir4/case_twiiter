@@ -263,7 +263,39 @@ Apaga a lista com o total de posts para cada #tag por localização.
 ```
 <br/>
 
+## Validação das API´s - Postman
+<p> Na raiz do projeto, existe um diretório "postman" que contém uma collection para efetuar os testes de consumo das API´s.</p>
+<p> O Postman é um "API Client" que auxilia na criação, testes, documentação e compartilhamento de API´s.</p>
+<p> Você pode optar por baixar e instalar a versão Desktop ou utilizar a <a href="https://www.postman.com/">plataforma via web browser.</a></p>
+<p> Independente da opção que escolher, importe o arquivo /postman/api_case_twiiter.postman_collection.json para efetuar as validações. </p>
+
+### <b>Versão Desktop</b>
+<img alt="versao_desktop" title="versao_desktop" src="./assets/versao_desktop.png" width=853 height=401 />
+
+---
+
+### <b>Versão Web</b>
+<img alt="versao_web" title="versao_web" src="./assets/versao_web.png" width=853 height=401 />
+
+
 ## <a name="arquitetura">Arquitetura</a>
+<p>O projeto <b>case_twiiter</b> é um conjunto de serviços estruturados em uma arquitetura de microserviços. A linguagem Python3 foi usada como base para o desenvolvimento dos serviços de coleta, sumarização e API´s, para este último foi utilizado o micro-framework Flask em conjunto do Python3.</p>
+
+<br/>
+
+### Detalhes da stack e integrações:
+
+ * Implementação feita em <a href="https://www.python.org/about/">python3.</a> <br/><br/>
+ * Uso do micro-framework <a href="https://flask.palletsprojects.com/en/2.2.x/">Flask 2.2</a><br/><br/>
+ * Persistência de dados de configuração é feita utilizando <a href="https://docs.docker.com/storage/volumes/">Docker volumes.</a><br/><br/>
+ * Armazenamento dos dados coletados, sumarizados e disponibilizados em um banco <a href="https://mariadb.org/">MariaDB</a>.<br/><br/>
+ * As bibliotecas utilizadas pelo projeto pode ser vista nos arquivos que estão na raiz de cada service:
+    - api_case_twiiter/requirements.txt
+    - collect_tweets/requirements.txt
+    - summarizer/requiriments.txt
+
+ <br/>
+
 ## <a name="comousar">Como usar</a>
 <p>Para utilizar este projeto, será necessário que você tenha uma <a href="https://developer.twitter.com/en"> conta de desenvolvedor do Twitter</a> para poder autenticar na API.</p>
 
