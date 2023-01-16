@@ -3,3 +3,11 @@ mariadb
 mariadb/*
 mariadb-*.*.*.tar.gz
 mariadb-*.*.*/
+data/
+data/*
+data/prometheus
+data/prometheus/*
+grafana/mariadb
+grafana/mariadb/*
+zabbix/
+zabbix/*
