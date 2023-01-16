@@ -13,8 +13,8 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 #######################################
-# Definitions for the API /topfollowers
-@app.route('/topfollowers', methods=['GET'])
+# Definitions for the API /USERS/FOLLOWERS/TOP5
+@app.route('/USERS/FOLLOWERS/TOP5', methods=['GET'])
 def get_followers():
     
     my_cursor = mydb.cursor()
@@ -36,8 +36,10 @@ def get_followers():
             dados=follow
         )
     )
-    
-@app.route('/topfollowers', methods=['POST'])
+
+#######################################
+# Definitions for the API /USERS/FOLLOWERS/TOP5/ADD
+@app.route('/USERS/FOLLOWERS/TOP5/ADD', methods=['POST'])
 def create_followers():
     followers = request.json
     
@@ -52,8 +54,10 @@ def create_followers():
             followers=followers
         )
     )
-    
-@app.route('/topfollowers', methods=['DELETE'])
+
+#######################################
+# Definitions for the API /USERS/FOLLOWERS/TOP5/DEL
+@app.route('/USERS/FOLLOWERS/TOP5/DEL', methods=['DELETE'])
 def delete_followers():
     followers = request.json
     
@@ -70,8 +74,8 @@ def delete_followers():
     )
     
 #######################################
-# Definitions for the API /countposts
-@app.route('/countposts', methods=['GET'])
+# Definitions for the API /USERS/POSTS/COUNT
+@app.route('/USERS/POSTS/COUNT', methods=['GET'])
 def get_countposts():
     
     my_cursor = mydb.cursor()
@@ -93,8 +97,10 @@ def get_countposts():
             dados=ctposts
         )
     )
-    
-@app.route('/countposts', methods=['DELETE'])
+
+#######################################
+# Definitions for the API /USERS/POSTS/COUNT/CLEAN
+@app.route('/USERS/POSTS/COUNT/CLEAN', methods=['DELETE'])
 def reset_countposts():
     
     my_cursor = mydb.cursor()
@@ -109,8 +115,8 @@ def reset_countposts():
     )
     
 #######################################
-# Definitions for the API /posttaglocation
-@app.route('/posttaglocation', methods=['GET'])
+# Definitions for the API /USERS/POSTS/TAGS/LOCALE
+@app.route('/USERS/POSTS/TAGS/LOCALE', methods=['GET'])
 def get_posttaglocale():
     
     my_cursor = mydb.cursor()
@@ -133,8 +139,10 @@ def get_posttaglocale():
             dados=pt_locale
         )
     )
-    
-@app.route('/posttaglocation', methods=['DELETE'])
+
+#######################################
+# Definitions for the API /USERS/POSTS/TAGS/LOCALE/CLEAN
+@app.route('/USERS/POSTS/TAGS/LOCALE/CLEAN', methods=['DELETE'])
 def reset_posttaglocale():
     
     my_cursor = mydb.cursor()
