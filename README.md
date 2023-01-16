@@ -55,8 +55,8 @@ Requisições para a API devem seguir os padrões:
 
 ## <a name="recursos">Recursos</a>
 
-## Dados de usuários [/topfollowers] <br/>
-<b>Listar (list) [GET /topfollowers]</b> <br/>
+## Dados de usuários [/USERS/FOLLOWERS/TOP5] <br/>
+<b>Listar (list) [GET /USERS/FOLLOWERS/TOP5]</b> <br/>
 Cria uma lista com os 5 usuários com mais seguidores.
 
 ```
@@ -89,8 +89,11 @@ Cria uma lista com os 5 usuários com mais seguidores.
                 "followers": 175317
             }
 ```
+
 <br/>
-<b>Novo (create) [POST /topfollowers]</b>
+
+## Dados de usuários [/USERS/FOLLOWERS/TOP5/ADD] <br/>
+<b>Novo (create) [POST /USERS/FOLLOWERS/TOP5/ADD]</b><br/>
 Inclui um novo registro de usuário / seguidores.
 
 ```
@@ -115,7 +118,9 @@ Inclui um novo registro de usuário / seguidores.
 }
 ```
 <br/>
-<b>Remover (delete) [DELETE /topfollowers]</b><br/>
+
+## Dados de usuários [/USERS/FOLLOWERS/TOP5/DEL] <br/>
+<b>Remover (delete) [DELETE /USERS/FOLLOWERS/TOP5/DEL]</b><br/>
 Deleta um registro de usuário / seguidores.
 
 ```
@@ -141,8 +146,8 @@ Deleta um registro de usuário / seguidores.
 ```
 <br/>
 
-## Contagem de posts por data/hora [/countposts] <br/>
-<b>Listar (list) [GET /countposts]</b><br/>
+## Contagem de posts por data/hora [/USERS/POSTS/COUNT] <br/>
+<b>Listar (list) [GET /USERS/POSTS/COUNT]</b><br/>
 Cria uma lista com o total de posts por hora do dia.
 
 ```
@@ -173,7 +178,9 @@ Cria uma lista com o total de posts por hora do dia.
             }
 ```
 <br/>
-<b>Apagar (delete) [DELETE /countposts]</b><br/>
+
+## Contagem de posts por data/hora [/USERS/POSTS/COUNT/CLEAN] <br/>
+<b>Apagar (delete) [DELETE /USERS/POSTS/COUNT/CLEAN]</b><br/>
 Apaga a lista com o total de posts por hora do dia.
 
 ```
@@ -193,8 +200,8 @@ Apaga a lista com o total de posts por hora do dia.
 ```
 <br/>
 
-## Total de posts para #tag por localização [/posttaglocation] <br/>
-<b>Listar (list) [GET /posttaglocation]</b> <br/>
+## Total de posts para #tag por localização [/USERS/POSTS/TAGS/LOCALE] <br/>
+<b>Listar (list) [GET /USERS/POSTS/TAGS/LOCALE]</b> <br/>
 Cria uma lista com o total de posts para cada #tag por localização.
 
 ```
@@ -234,7 +241,9 @@ Cria uma lista com o total de posts para cada #tag por localização.
             }
 ```
 <br/>
-<b>Apagar (delete) [DELETE /posttaglocation]</b><br/>
+
+## Total de posts para #tag por localização [/USERS/POSTS/TAGS/LOCALE/CLEAN] <br/>
+<b>Apagar (delete) [DELETE /USERS/POSTS/TAGS/LOCALE/CLEAN]</b><br/>
 Apaga a lista com o total de posts para cada #tag por localização.
 
 ```
