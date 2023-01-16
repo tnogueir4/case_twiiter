@@ -1,4 +1,5 @@
 import mysql.connector
+import logging
 from flask import Flask, make_response, jsonify, request
 
 
@@ -9,6 +10,7 @@ mydb = mysql.connector.connect(
     database='social_media'
 )
 
+logging.basicConfig(filename='record.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
@@ -36,6 +38,16 @@ def get_followers():
             dados=follow
         )
     )
+
+@app.route('/')
+def main():
+  # showing different logging levels
+  app.logger.debug("debug log info")
+  app.logger.info("Info log information")
+  app.logger.warning("Warning log info")
+  app.logger.error("Error log info")
+  app.logger.critical("Critical log info")
+  return "testing logging levels."
 
 #######################################
 # Definitions for the API /USERS/FOLLOWERS/TOP5/ADD
@@ -155,4 +167,5 @@ def reset_posttaglocale():
             mensagem='All route data /posttaglocation has been deleted.'
         )
     )
-app.run()
+if __name__ == '__main__':
+  app.run(debug=True)
